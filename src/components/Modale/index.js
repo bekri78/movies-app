@@ -23,7 +23,6 @@ export default function Modale({open, close, onDelete,movie}) {
   const handleClose = () => close(false);
   
  
-
   const handleCloseSnack = (event, reason) => {
     if (reason === 'clickaway') {
       return;
@@ -55,10 +54,10 @@ export default function Modale({open, close, onDelete,movie}) {
           <div style={{ display:'flex', justifyContent:'end'}}>
 
           <Button variant="outlined" color="error" style={{margin:5}} onClick={handleClose}>Non</Button>
-          <Button variant="contained" style={{margin:5}} onClick = { async ()=>{
-           await onDelete(movie)
-           await handleClose()
-           setShowSnack(true)
+          <Button variant="contained" style={{margin:5}} onClick = { ()=>{
+             onDelete(movie)
+             handleClose()
+          
           }}>Oui</Button>
           </div>
  
