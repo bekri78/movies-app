@@ -51,7 +51,8 @@ export default function MovieCard({ movie, onDelete }) {
   const [expanded, setExpanded] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  
+  console.log(movie)
+
   return (
     <>
     <Card sx={{ maxWidth: 345 , margin:1,boxShadow: 3 }}>
@@ -67,7 +68,7 @@ export default function MovieCard({ movie, onDelete }) {
           </IconButton>
         }
         title={movie.title}
-        subheader="September 14, 2016"
+        subheader={movie.category}
       />
       <CardMedia
         component="img"
@@ -92,8 +93,10 @@ export default function MovieCard({ movie, onDelete }) {
         </IconButton>
         </div>
          <IconButton aria-label="share">
-          <DeleteIcon  onClick={ ()=>setOpenModal(true)} /> 
-          {/* onClick={() => onDelete(movie)} */}
+          <DeleteIcon  onClick={ ()=>
+            setOpenModal(true)
+             } /> 
+       
         </IconButton>
        
       </CardActions>

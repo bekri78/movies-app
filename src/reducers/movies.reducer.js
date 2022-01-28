@@ -1,4 +1,4 @@
-import { DELETE_MOVIE, GET_MOVIES_FAILURE, GET_MOVIES_START, GET_MOVIES_SUCCESS } from '../actions/movies.actions';
+import { DELETE_MOVIE, GET_MOVIES_FAILURE, GET_MOVIES_START, GET_MOVIES_SUCCESS} from '../actions/movies.actions';
 
 const initalState = {
   allMovies: null,
@@ -15,7 +15,6 @@ const moviesReducer = (state = initalState, action) => {
 
     case GET_MOVIES_SUCCESS: {
       const movies = action.payload;
-
       return { ...state, allMovies: movies, status: 'success' };
     }
 
@@ -28,6 +27,9 @@ const moviesReducer = (state = initalState, action) => {
       const deleted = state.allMovies.filter((item) => item.id !== movie.id);
       return { ...state, allMovies: deleted };
     }
+
+    
+
 
     default:
       return state;
