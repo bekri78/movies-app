@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getMovies, deleteMovie } from '../../actions/movies.actions';
+import Home from '../Home'
 import MovieCard from '../MovieCard';
 import BasicSelect from '../Select'
 import LinearBuffer from '../Loader'
@@ -19,14 +20,14 @@ function App() {
  
   useEffect(() => {
     dispatch(getMovies());
-  }, [dispatch]); //dispatch is stable we do not need to put it here but we avoid disabling the rule.
+  }, [dispatch]); 
 
   useEffect(() => {
     setStoreMovie(allMovies)
   }, [allMovies]);
 
   const handleDelete = (movie) => {
-    console.log("delete")
+ 
     dispatch(deleteMovie(movie));
     
   };
@@ -59,6 +60,7 @@ function App() {
     if (status === STATUS.SUCCESS) {
       return (
         <div className="App">
+          <Home/>
         {isEmpty(allMovies) && <h1>Aucun film disponible</h1>}
  
         <BasicSelect allMovies={allMovies} categorie={(el)=>filter(el)} />
@@ -71,7 +73,7 @@ function App() {
     );
   }
 
-  // status === "idle", si on a pas de films ça sert à rien de rendre l'app: null ou message d'erreur
+ 
   return null;
 }
 

@@ -2,9 +2,7 @@ import { DELETE_MOVIE, GET_MOVIES_FAILURE, GET_MOVIES_START, GET_MOVIES_SUCCESS}
 
 const initalState = {
   allMovies: null,
-  status: 'idle', // "idle" | "pending" | "success" | "failure"
-  // le status permet de dire si c'est pending on affiche "chargement", si c'est success on affiches les movies et si c'est failure on affiche une erreur.
-  // idle veut dire "statut de base"
+  status: 'idle', 
 };
 
 const moviesReducer = (state = initalState, action) => {
