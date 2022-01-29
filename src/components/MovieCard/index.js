@@ -51,7 +51,7 @@ export default function MovieCard({ movie, onDelete }) {
   const [expanded, setExpanded] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  console.log(movie)
+ 
 
   return (
     <>

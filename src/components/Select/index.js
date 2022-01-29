@@ -20,7 +20,7 @@ export default function BasicSelect({allMovies,categorie}) {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 120, marginTop:10 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Categorie</InputLabel>
         <Select
